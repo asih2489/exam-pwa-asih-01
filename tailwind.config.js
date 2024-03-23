@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import {
     BREAKPOINTS, COLORS, FONT_FAMILY, FONT_SIZE, LINE_HEIGHT, SPACING, ZINDEX,
-} from './core/theme/vars';
+} from './src/theme/vars';
 
 const plugin = require('tailwindcss/plugin');
 
@@ -121,6 +121,7 @@ module.exports = {
         },
     },
     plugins: [
+        require('tailwindcss'),
         require('@tailwindcss/forms')({
             strategy: 'class',
         }),
@@ -133,6 +134,9 @@ module.exports = {
                 },
                 '.scrollbar-none::-webkit-scrollbar': {
                     display: 'none',
+                },
+                'bg-primary-500': {
+                    'background-color': '#5972FE',
                 },
             });
         }),
